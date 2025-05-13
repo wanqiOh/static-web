@@ -29,6 +29,9 @@ const DescriptionImage = ({ title, description, src, alt, sectionPart = "button"
       gap-4 sm:gap-8 md:gap-12 
       px-4 sm:px-6 md:px-8 lg:px-20
       ${isText ? "sm:pl-[105px] bg-[rgba(74,197,223,0.05)]" : ""}
+      w-full
+      max-w-[100vw]
+      overflow-x-hidden
     `}>
       {/* Image Section - Handle landscape and small screens */}
       {imageOnLeft && (
