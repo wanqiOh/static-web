@@ -92,27 +92,23 @@ const HomePage = () => {
 
 
   return (
-    <div className="min-h-screen w-full bg-[#0f172a] text-white font-sans">
-      <header className="flex justify-between items-center px-20 py-4 bg-gradient-to-r from-[rgba(17,204,168,0.05)] to-[rgba(74,197,223,0.05)]">
-        <div className="flex items-center gap-2">
-          <img src={CaptivateLogo} alt="Captivate Logo" className="h-8 w-auto" />
+    <div className="min-h-screen w-full bg-[#0f172a] text-white font-sans overflow-x-hidden">
+      <header className="flex flex-col md:flex-row justify-between items-center px-4 md:px-20 py-4">
+        <div className="flex items-center gap-2 mb-4 md:mb-0">
+          <img src={CaptivateLogo} alt="Captivate Logo" className="h-6 md:h-8 w-auto" />
         </div>
-        <nav className="space-x-4">
-          <a href="#features" className="hover:underline text-white">Features</a>
-          <a href="#pricing" className="hover:underline text-white">Pricing</a>
-          <a href="#faq" className="hover:underline text-white">FAQ</a>
+        <nav className="flex flex-wrap justify-center gap-4 mb-4 md:mb-0">
+          <a href="#features" className="hover:underline text-white text-sm md:text-base">Features</a>
+          <a href="#pricing" className="hover:underline text-white text-sm md:text-base">Pricing</a>
+          <a href="#faq" className="hover:underline text-white text-sm md:text-base">FAQ</a>
         </nav>
         <div className="flex gap-2">
-          <Button
-            className="rounded-full px-6 py-2 font-semibold shadow-md transition border-2 border-transparent focus:outline-none focus:ring-2 focus:ring-[#11CCA8] hover:border-[#11CCA8] hover:bg-[rgba(74,197,223,0.4)]"
-          >
-            Login
-          </Button>
-          <Button
-            className="bg-gradient-to-r from-[#11CCA8] to-[#4AC5DF] text-black rounded-full px-6 py-2 font-semibold shadow-md hover:opacity-90 transition focus:outline-none focus:ring-2 focus:ring-[#11CCA8] hover:border-[#11CCA8] border-2 border-transparent"
-          >
-            Get Started
-          </Button>
+          <Button className="
+            text-sm sm:text-base
+            px-4 sm:px-6
+            w-full sm:w-auto
+          ">Login</Button>
+          <Button className="bg-gradient-to-r from-[#11CCA8] to-[#4AC5DF] text-black rounded-full text-sm md:text-base px-4 md:px-6">Get Started</Button>
         </div>
       </header>
 
@@ -127,9 +123,14 @@ const HomePage = () => {
         />
       </section>
 
-      <section className="flex items-center justify-between mb-6 px-20 h-[160px] pt-[40px] pb-[32px]">
+      <section className="flex items-center overflow-x-auto md:justify-between px-4 md:px-20 py-8 scrollbar-hide">
         {[Icon1, Icon2, Icon3, Icon4, Icon5].map((icon, idx) => (
-          <img key={idx} src={icon} alt={`Icon ${idx + 1}`} className="w-[197px] h-[88px] opacity-[0.2]" />
+          <img 
+            key={idx} 
+            src={icon} 
+            alt={`Icon ${idx + 1}`} 
+            className="w-[120px] md:w-[197px] h-[60px] md:h-[88px] opacity-[0.2] mx-4 md:mx-0 flex-shrink-0" 
+          />
         ))}
       </section>
 
@@ -232,7 +233,7 @@ laoreet justo lectus a eget vitae. Tellus id pretium."
       </section>
 
       <section id="faq" className="px-20 pt-16 pb-0">
-        <h3 className="text-[72px] font-semibold mb-12 text-center">Frequent questions</h3>
+        <h3 className="text-[2rem] font-semibold mb-12 text-center">Frequent questions</h3>
         <div className="max-w-4xl mx-auto flex">
           <div className="w-[355px] p-4">
           </div>
@@ -243,20 +244,35 @@ laoreet justo lectus a eget vitae. Tellus id pretium."
           </div></div>
       </section>
 
-      <div className="px-20 py-16">
+      <div className={`
+        px-20
+        py-16
+        max-w-7xl
+        mx-auto px-4 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-10
+      `}>
         <LandingCard description={"\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis mauris, libero tellus nec tortor libero arcu, sapien. Venenatis sit morbi ac amet amet.\""} writer={"Mikayla Smith, Marketing Director"} /></div>
-      <div className="px-20 py-16 bg-[#0c111d]">
+      <div className={`
+        px-20
+        py-16
+        max-w-7xl
+        mx-auto px-4 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-10
+       bg-[#0c111d`}>
         <LandingCard description={"Get started today"} writer={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et netus enim pellentesque pharetra semper at faucibus neque ac suspendisse."} />
       </div>
 
-      <div className="w-[1216px] h-[91px] space-y-4 px-20 py-16">
+<div className={`
+        px-20
+        py-16
+        max-w-7xl
+        mx-auto px-8 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-10
+      `}>
+      <div className="px-4 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-12 md:py-16">
         <div className="flex items-center space-x-2">
           <img src={CaptivateLogo} alt="Captivate Logo" className="w-[200px] h-[59px]" />
         </div>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 py-16">
-
-        <div className="col-span-4 grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
           <div>
             <h4 className="uppercase text-xs font-semibold text-cyan-400 mb-3">Landing Pages</h4>
             <ul className="space-y-2 text-sm">
@@ -266,7 +282,7 @@ laoreet justo lectus a eget vitae. Tellus id pretium."
             </ul>
           </div>
 
-          <div>
+          <div className="px-2">
             <div className="invisible sm:visible h-5" /> {/* Filler to align title row */}
             <ul className="space-y-2 text-sm">
               <li>Landing page V4</li>
@@ -283,7 +299,7 @@ laoreet justo lectus a eget vitae. Tellus id pretium."
             </ul>
           </div>
 
-          <div>
+          <div className="px-4 sm:px-6 md:px-8 lg:px-20">
             <div className="invisible sm:visible h-5" /> {/* Filler to align title row */}
             <ul className="space-y-2 text-sm">
               <li>Password</li>
@@ -292,8 +308,9 @@ laoreet justo lectus a eget vitae. Tellus id pretium."
           </div>
         </div>
       </div>
+      </div>
 
-      <footer className="text-white px-6 py-4">
+      <footer className="text-white w-full px-4 sm:px-6 md:px-8 lg:px-20 py-8 sm:py-12">
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-4">
             <img src={FacebookIcon} alt="Facebook" className="w-5 h-5" />

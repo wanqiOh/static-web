@@ -11,7 +11,7 @@ const FeatureCard = ({
   imagePosition = "top"
 }) => {
   return (
-    <div className={`${(imagePosition === "top" || labelText === "ANALYTICS") ? "col-span-2" : ""} bg-[rgba(74,197,223,0.05)] rounded-2xl shadow-lg flex flex-col items-start p-8 h-[536px]`}>
+    <div className={`${(imagePosition === "top" || labelText === "ANALYTICS" || (window.innerWidth < 641 && labelText === "DESIGN")) ? "col-span-2" : ""} bg-[rgba(74,197,223,0.05)] rounded-2xl shadow-lg flex flex-col items-start p-8 h-[536px]`}>
       {imagePosition === "top" && (
         <img
           src={image}
