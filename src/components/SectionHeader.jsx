@@ -15,7 +15,7 @@ const SectionHeader = ({
   `;
 
   const titleClasses = `
-    text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-[2rem]
+    text-[2rem] xs:text-4xl sm:text-5xl md:text-6xl lg:text-[${window.innerWidth < 1024 ? "2rem" : "4.5rem"}]
     font-semibold
     leading-tight sm:leading-normal
     w-full sm:w-auto

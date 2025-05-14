@@ -162,7 +162,6 @@ To ensure consistent responsive behavior:
    - Laptops
    - Desktop monitors
 3. Check common breakpoints:
-   - 320px (small mobile)
    - 375px (mobile)
    - 768px (tablet)
    - 1024px (laptop)

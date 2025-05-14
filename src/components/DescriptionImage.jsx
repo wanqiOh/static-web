@@ -16,10 +16,11 @@ const DescriptionImage = ({ title, description, src, alt, sectionPart = "button"
   const imageOnLeft = title === "All-in-one\nplatform";
 
   const titleClasses = `
-    text-[2rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[2rem]
+    text-[2rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[${window.innerWidth < 1024 ? "2rem" : "4.5rem"}]
     font-semibold
     leading-tight sm:leading-normal
     ${isButton ? 'lg:text-[2rem]' : 'lg:text-[36px]'}
+    mb-4
   `;
 
   return (
@@ -47,7 +48,7 @@ const DescriptionImage = ({ title, description, src, alt, sectionPart = "button"
       )}
 
       {/* Content Section - Responsive text and spacing */}
-      <div className="w-full sm:w-full max-w-full sm:max-w-[439px]">
+      <div className={`w-full sm:w-${window.innerWidth < 1024 ? "full" : "1/2"} max-w-full sm:max-w-[439px]`}>
         {isText && (
           <div className={`flex pt-8 sm:grid sm:grid-cols-${window.innerWidth < 768 ? "3" : "2"} gap-2 sm:gap-4 mb-3 sm:mb-4`}>
           <GradientLabel width={131} title="TEMPLATES" />
